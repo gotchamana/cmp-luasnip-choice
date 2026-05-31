@@ -38,7 +38,7 @@ function M.source.new()
 end
 
 function M.source:is_available()
-    return require("luasnip.session").active_choice_node
+    return require("luasnip").choice_active()
 end
 
 function M.source:execute(completion_item, callback)

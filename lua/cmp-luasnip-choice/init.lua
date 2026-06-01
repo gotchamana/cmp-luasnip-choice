@@ -56,9 +56,10 @@ function M.source:complete(_, callback)
     if choices_ok then
         local items = {}
 
-        for _, choice_docstring in ipairs(choice_docstrings) do
+        for i, choice_docstring in ipairs(choice_docstrings) do
             table.insert(items, {
                 label = choice_docstring,
+                index = i,
                 word = "",
                 documentation = choice_docstring,
                 kind = cmp.lsp.CompletionItemKind.Snippet,
